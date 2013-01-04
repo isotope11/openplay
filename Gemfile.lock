@@ -1,0 +1,10 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    dnssd (2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  dnssd
