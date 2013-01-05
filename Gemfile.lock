@@ -1,10 +1,39 @@
+PATH
+  remote: .
+  specs:
+    OpenPlay (0.0.1)
+      dnssd (~> 2.0)
+      findme
+
 GEM
   remote: https://rubygems.org/
   specs:
+    ansi (1.4.3)
+    coderay (1.0.8)
     dnssd (2.0)
+    findme (0.0.5)
+    metaclass (0.0.1)
+    method_source (0.8.1)
+    minitest (4.3.3)
+    minitest-matchers (1.2.0)
+      minitest (>= 2.5.0)
+    mocha (0.13.1)
+      metaclass (~> 0.0.1)
+    pry (0.9.10)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.3.1)
+    slop (3.3.3)
+    turn (0.9.6)
+      ansi
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  dnssd
+  OpenPlay!
+  minitest
+  minitest-matchers
+  mocha
+  pry
+  turn

@@ -7,3 +7,8 @@ On ubuntu:
     sudo apt-get install libavahi-compat-libdnssd-dev
 
 You also need ffmpeg on the throwing machine, and vld on the receiving.
+
+### Development
+Run the tests with:
+
+    rake
