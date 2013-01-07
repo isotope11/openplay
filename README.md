@@ -14,4 +14,9 @@ Run the tests with:
     rake
 
 ### To throw
-    ./bin/openplay throw localhost
+This needs a real ip, rather than just localhost
+
+    ./bin/openplay throw 127.0.0.1
+
+### To receive
+    ./bin/openplay receive
