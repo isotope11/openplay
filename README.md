@@ -14,4 +14,4 @@ Run the tests with:
     rake
 
 ### To throw
-    openplay throw localhost
+    ./bin/openplay throw localhost
