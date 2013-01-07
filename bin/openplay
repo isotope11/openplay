@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require 'thor'
 require './lib/openplay/client'
+require './lib/openplay/server'
 
 module Openplay
   class CLI < Thor
@@ -9,6 +10,13 @@ module Openplay
       puts "I'm throwing to #{receiver}"
       @client = ::Openplay::Client.new(receiver)
       @client.throw
+    end
+
+    desc "receive", "Receive video"
+    def receive
+      puts "I'm receiving."
+      @server = ::Openplay::Server.new
+      @server.receive
     end
   end
 end
