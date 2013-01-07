@@ -14,4 +14,4 @@ Run the tests with:
     rake
 
 ### To throw
-    thor openplay:throw
+    openplay throw localhost
