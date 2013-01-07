@@ -8,7 +8,7 @@ module Openplay
     end
 
     def throw
-      `ffmpeg -framerate ntsc -video_size 1920x1080 -f x11grab -i :0.0 -f alsa -i pulse -vcodec libx264 -tune zerolatency -crf 26 -preset ultrafast -f mpegts udp://#{server}:#{port}?pkt_size=1316`
+      `ffmpeg -framerate ntsc -video_size 1920x1080 -f x11grab -i #{ENV['DISPLAY']} -f alsa -i pulse -vcodec libx264 -tune zerolatency -crf 26 -preset ultrafast -f mpegts udp://#{server}:#{port}?pkt_size=1316`
     end
   end
 end
