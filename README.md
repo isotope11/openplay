@@ -12,3 +12,6 @@ You also need ffmpeg on the throwing machine, and vld on the receiving.
 Run the tests with:
 
     rake
+
+### To throw
+    thor openplay:throw
