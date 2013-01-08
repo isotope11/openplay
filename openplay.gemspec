@@ -1,10 +1,16 @@
 Gem::Specification.new do |s|
-  s.name = 'OpenPlay'
+  s.name = 'openplay'
   s.authors = ['Josh Adams', 'Adam Gamble']
+  s.email = ['josh@isotope11.com', 'agamble@isotope11.com']
   s.summary = 'Open source air play'
+  s.homepage = 'http://www.isotope11.com'
   s.description = 'Open source air play'
   s.files = `git ls-files`.split("\n")
   s.version = %q(0.0.1)
+
+  s.files = Dir.glob("{bin,lib}/**/*") + %w(README.md)
+  s.executables = ['openplay']
+  s.require_path = 'lib'
 
   s.add_dependency 'dnssd', '~> 2.0'
   s.add_dependency 'findme'
