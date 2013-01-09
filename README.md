@@ -19,10 +19,20 @@ Run the tests with:
 
     rake
 
-### To throw
-This needs a real ip, rather than just localhost
-
-    ./bin/openplay throw 127.0.0.1
+### For help
+    ./bin/openplay help
 
 ### To receive
     ./bin/openplay receive
+
+### To list available servers
+    ./bin/openplay list
+
+### To throw
+#### by Hostname
+    ./bin/openplay --hostname=some-host
+
+#### by IP
+This needs a real ip, rather than just localhost
+
+    ./bin/openplay throw --host=127.0.0.1
