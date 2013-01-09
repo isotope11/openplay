@@ -2,8 +2,7 @@
 Screenshare to another machine painlessly, with basic glue for ffmpeg and vlc.
 
 ### Prerequisites
-On ubuntu:
-
+#### Ubuntu
     sudo apt-get install libavahi-compat-libdnssd-dev
 
 To throw:
@@ -13,6 +12,13 @@ To throw:
 To catch:
 
     sudo apt-get install vlc
+
+#### Mac OS
+To throw:
+
+    brew install ffmpeg
+
+It also requires VLC to be installed in order to catch
 
 ### Development
 Run the tests with:
