@@ -6,7 +6,13 @@ On ubuntu:
 
     sudo apt-get install libavahi-compat-libdnssd-dev
 
-You also need ffmpeg on the throwing machine, and vld on the receiving.
+To throw:
+
+    sudo apt-get install ffmpeg libavcodec-extra-53
+
+To catch:
+
+    sudo apt-get install vlc
 
 ### Development
 Run the tests with:

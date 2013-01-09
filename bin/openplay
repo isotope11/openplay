@@ -6,15 +6,16 @@ require './lib/openplay/server'
 module Openplay
   class CLI < Thor
     desc "throw", "Throw video"
+    method_option :host, default: "127.0.0.1", banner: "Host IP"
+    method_option :port, default: 5003, banner: "Port the host is receiving on."
+    method_option :resolution, default: nil
     def throw(receiver)
-      puts "I'm throwing to #{receiver}"
-      @client = ::Openplay::Client.new(receiver)
+      @client = ::Openplay::Client.new(receiver, options)
       @client.throw
     end
 
     desc "receive", "Receive video"
     def receive
-      puts "I'm receiving."
       @server = ::Openplay::Server.new
       @server.receive
     end
