@@ -1,16 +1,24 @@
 require_relative 'determines_resolution'
+require_relative 'discovers_servers'
 
 module Openplay
   class Client
     attr_reader :host, :port
 
     def initialize(options={})
-      @host = options[:host]
-      @port = options[:port]
+      if options[:hostname]
+        server = get_server_by_hostname(options[:hostname])
+        raise "No server found with hostname #{options[:hostname]}" unless server
+        @host = server.ip
+        @port = server.port
+      else
+        @host = options[:host]
+        @port = options[:port]
+      end
       @resolution = options[:resolution] || screen_resolution
-      STDOUT.puts @resolution
     end
 
+    # Throw video to a particular server
     def throw
       options = []
       options << "-framerate ntsc"
@@ -22,7 +30,16 @@ module Openplay
       `ffmpeg #{options.join(' ')}`
     end
 
+    # List available servers
+    def list
+      DiscoversServers.find_servers
+    end
+
     private
+    def get_server_by_hostname(hostname)
+      list.detect{|s| s.hosttxt == hostname }
+    end
+
     def screen_resolution
       DeterminesResolution.new.get
     end

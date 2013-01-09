@@ -7,11 +7,21 @@ module Openplay
   class CLI < Thor
     desc "throw", "Throw video"
     method_option :host, default: "127.0.0.1", banner: "Host IP"
+    method_option :hostname, banner: "Hostname returned from 'list'"
     method_option :port, default: 5003, banner: "Port the host is receiving on."
     method_option :resolution, default: nil
     def throw
       @client = ::Openplay::Client.new(options)
       @client.throw
+    end
+
+    desc "list", "List available servers"
+    def list
+      @client = ::Openplay::Client.new
+      # Just list IPv4 records for now
+      @client.list.each do |server|
+        puts "#{server.hosttxt} on port #{server.port}"
+      end
     end
 
     desc "receive", "Receive video"
