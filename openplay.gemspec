@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.homepage = 'http://www.isotope11.com'
   s.description = 'Open source air play'
   s.files = `git ls-files`.split("\n")
-  s.version = %q(0.0.1)
+  s.version = %q(0.0.2)
 
   s.files = Dir.glob("{bin,lib}/**/*") + %w(README.md)
   s.executables = ['openplay']
