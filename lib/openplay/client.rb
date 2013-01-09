@@ -2,17 +2,24 @@ require_relative 'determines_resolution'
 
 module Openplay
   class Client
-    attr_reader :server, :port
+    attr_reader :host, :port
 
-    def initialize(server, options={})
-      @server = server
+    def initialize(options={})
+      @host = options[:host]
       @port = options[:port]
       @resolution = options[:resolution] || screen_resolution
       STDOUT.puts @resolution
     end
 
     def throw
-      `ffmpeg -framerate ntsc -video_size #{@resolution} -f x11grab -i #{ENV['DISPLAY']} -f alsa -i pulse -vcodec libx264 -tune zerolatency -crf 26 -preset ultrafast -f mpegts udp://#{server}:#{port}?pkt_size=#{packet_size}`
+      options = []
+      options << "-framerate ntsc"
+      options << "-video_size #{@resolution}"
+      options << "-f x11grab -i #{ENV['DISPLAY']}"
+      options << "-f alsa -i pulse"
+      options << "-vcodec libx264 -tune zerolatency -crf 26 -preset ultrafast"
+      options << "-f mpegts udp://#{host}:#{port}?pkt_size=#{packet_size}"
+      `ffmpeg #{options.join(' ')}`
     end
 
     private

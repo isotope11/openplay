@@ -9,8 +9,8 @@ module Openplay
     method_option :host, default: "127.0.0.1", banner: "Host IP"
     method_option :port, default: 5003, banner: "Port the host is receiving on."
     method_option :resolution, default: nil
-    def throw(receiver)
-      @client = ::Openplay::Client.new(receiver, options)
+    def throw
+      @client = ::Openplay::Client.new(options)
       @client.throw
     end
 
