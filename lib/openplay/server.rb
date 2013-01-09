@@ -20,7 +20,7 @@ module Openplay
 
     def cvlc_command
       if RUBY_PLATFORM =~ /darwin/
-        "/Applications/VLC.app/Contents/MacOS/VLC -I rc"
+        "/Applications/VLC.app/Contents/MacOS/VLC"
       else
         "cvlc"
       end
