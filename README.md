@@ -14,9 +14,7 @@ To catch:
     sudo apt-get install vlc
 
 #### Mac OS
-To throw:
-
-    brew install ffmpeg
+Catching is supported on Macs, throwing is not yet.
 
 It also requires VLC to be installed in order to catch
 
