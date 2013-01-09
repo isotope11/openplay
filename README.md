@@ -30,7 +30,7 @@ Run the tests with:
 
 ### To throw
 #### by Hostname
-    ./bin/openplay --hostname=some-host
+    ./bin/openplay throw --hostname=some-host
 
 #### by IP
 This needs a real ip, rather than just localhost
