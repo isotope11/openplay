@@ -9,6 +9,7 @@ describe DiscoversServers do
         bad = mock
         good.expects(:service).returns("_openplay._tcp")
         bad.expects(:service).returns("_notopenplay._tcp")
+        good.expects(:ipv4).returns("IPv4")
         Findme.expects(:discover).returns([good, bad])
         DiscoversServers.find_servers.must_equal [good]
       end
